@@ -22,6 +22,4 @@ if(NOT json_POPULATED)
     add_subdirectory(${json_SOURCE_DIR} ${json_BINARY_DIR} EXCLUDE_FROM_ALL)
 endif()
 
-add_executable(example example.cpp)
-target_link_libraries(example PRIVATE cpr::cpr nlohmann_json::nlohmann_json)
-include_directories(${cpr_SOURCE_DIR}/include ${json_SOURCE_DIR}/include)
+add_subdirectory(src)

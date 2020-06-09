@@ -20,9 +20,9 @@ If you have libcurl installed, you can speed up the build by adding
 building dependency tests with `-DBUILD_CPR_TESTS=OFF` to shave off even more
 time.
 
-This should produce a binary in the build directory called `example`. Run it!
-If you get a response in the form of some json object, then everything worked
-as expected! The program you just ran is a sweet 3 liner you'll find
+This should produce a binary in the `build/src` directory called `example`. Run
+it! If you get a response in the form of some json object, then everything
+worked as expected! The program you just ran is a sweet 3 liner you'll find
 [here](example.cpp).
 
 ## Documentation
