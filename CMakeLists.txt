@@ -6,10 +6,16 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 include(FetchContent)
 
-FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/whoshuu/cpr.git)
-FetchContent_MakeAvailable(cpr)
+FetchContent_Declare(cpr
+    GIT_REPOSITORY https://github.com/whoshuu/cpr.git)
+FetchContent_GetProperties(cpr)
+if(NOT cpr_POPULATED)
+    FetchContent_Populate(cpr)
+    add_subdirectory(${cpr_SOURCE_DIR} ${cpr_BINARY_DIR})
+endif()
 
-FetchContent_Declare(json GIT_REPOSITORY https://github.com/nlohmann/json.git)
+FetchContent_Declare(json
+    GIT_REPOSITORY https://github.com/ArthurSonzogni/nlohmann_json_cmake_fetchcontent.git)
 FetchContent_GetProperties(json)
 if(NOT json_POPULATED)
     FetchContent_Populate(json)
